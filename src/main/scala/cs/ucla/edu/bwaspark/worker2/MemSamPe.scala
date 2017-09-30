@@ -524,7 +524,7 @@ object MemSamPe {
                   
                   var key: PairLong = new PairLong
                   key.y = k.toLong << 32 | i
-                  key.x = q.toLong << 32 | ((hash64(key.y ^ id << 8) << 32) >>> 32) // modify from (hash64(key.y ^ id << 8) & 0xffffffff)
+                  key.x = q.toLong << 32 | ((hash64(key.y) << 32) >>> 32) // modify from (hash64(key.y ^ id << 8) & 0xffffffff)
                   keyUVec = keyUVec :+ key
                   k -= 1
                 }

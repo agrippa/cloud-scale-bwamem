@@ -447,7 +447,7 @@ void mem_mark_primary_se(const mem_opt_t *opt, int n, mem_alnreg_t *a, int64_t i
 	kvec_t(int) z;
 	if (n == 0) return;
 	kv_init(z);
-	for (i = 0; i < n; ++i) a[i].sub = 0, a[i].secondary = -1, a[i].hash = hash_64(id+i);
+	for (i = 0; i < n; ++i) a[i].sub = 0, a[i].secondary = -1, a[i].hash = hash_64(i);
 	ks_introsort(mem_ars_hash, n, a);
 	tmp = opt->a + opt->b;
 	tmp = opt->o_del + opt->e_del > tmp? opt->o_del + opt->e_del : tmp;

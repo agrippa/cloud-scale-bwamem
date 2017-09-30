@@ -50,7 +50,7 @@ object MemMarkPrimarySe {
       while(i < n) {
         a(i).sub = 0
         a(i).secondary = -1
-        a(i).hash = hash64((id + i.toLong))
+        a(i).hash = hash64((i.toLong))
         i += 1
       }
       //ks_introsort(mem_ars_hash, n, a)

@@ -333,7 +333,7 @@ int mem_pair(const mem_opt_t *opt, int64_t l_pac, const uint8_t *pac, const mem_
 				if (q < 0) q = 0;
 				p = kv_pushp(pair64_t, u);
 				p->y = (uint64_t)k<<32 | i;
-				p->x = (uint64_t)q<<32 | (hash_64(p->y ^ id<<8) & 0xffffffffU);
+				p->x = (uint64_t)q<<32 | (hash_64(p->y) & 0xffffffffU);
 				//printf("[%lld,%lld]\t%d\tdist=%ld\n", v.a[k].x, v.a[i].x, q, (long)dist);
 			}
 		}
