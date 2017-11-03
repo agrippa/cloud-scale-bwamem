@@ -68,6 +68,7 @@ class SAMHeader extends Serializable {
     val strArray = str.split('\t')
       
     for(strSeg <- strArray) {
+        System.err.println(strSeg)
       val op = strSeg.take(2)
       op match {
         case "ID" => id = strSeg.drop(3)

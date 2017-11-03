@@ -16,7 +16,7 @@
       <version>0.2.2</version>
       <type>jar</type>
       <scope>system</scope>
-      <systemPath>/curr/pengwei/github/cloud-scale-bwamem/target/cloud-scale-bwamem-0.2.2.jar</systemPath>
+      <systemPath>/home/mg1/cloud-scale-bwamem/target/cloud-scale-bwamem-0.2.2.jar</systemPath>
     </dependency>   
   </dependencies>
   

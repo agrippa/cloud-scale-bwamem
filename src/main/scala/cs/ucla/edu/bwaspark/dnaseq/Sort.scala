@@ -34,7 +34,8 @@ object Sort extends Serializable {
   def apply(sc: SparkContext, hdfsAddress: String, alignmentsRootPath: String, coalesceFactor: Int) = {
     val conf = new Configuration
     val fs = FileSystem.get(new URI(hdfsAddress), conf)
-    val paths = fs.listStatus(new Path(alignmentsRootPath)).map(ele => ele.getPath)
+    val paths = fs.listStatus(new Path(alignmentsRootPath)).map(ele => ele.getPath).filter(ele => ele.getName().endsWith(".parquet"))
+    paths.foreach { println }
     val totalFilePartitions = paths.flatMap(p => fs.listStatus(p)).map(ele => ele.getPath).size
     println("Total number of new file partitions" + (totalFilePartitions/coalesceFactor))
     var adamRecords: RDD[AlignmentRecord] = new ADAMContext(sc).loadAlignmentsFromPaths(paths)
